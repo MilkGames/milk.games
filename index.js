@@ -48,10 +48,6 @@ app.get('/', function(req, res) {
 	res.render('index', {projects: projects});
 });
 
-app.get('/lithiio', function(req, res) {
-	res.render('lithiio');
-});
-
 app.get('/projects', function(req, res) {
 	res.render('projects', {projects: projects});
 });
@@ -73,7 +69,6 @@ app.get('/api/projects.json', function(req, res) {
 
 app.post('/feedback', function(req, res) {
 	if (req.body.feedback.length < 5) { res.end("Feedback must be longer than 5 characters."); return; }
-	console.log(req)
 	verify(config.cap, req.body["h-captcha-response"])
 	.then(function(info){
 		console.log(info)
@@ -87,7 +82,6 @@ app.post('/feedback', function(req, res) {
 		console.log(err)
 		res.end("Invalid Captcha")
 	});
-	//if (req.recaptcha.error) { res.end("Recaptcha error!"); return; }
 
 });
 
