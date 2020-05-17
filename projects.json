@@ -25,6 +25,8 @@
 		"name": "milk.games",
 		"url": "site",
 		"tags": ["site", "web"],
+		"opensource": true,
+		"opensourceurl": "https://github.com/MilkGames/milk.games",
 		"type": "project",
 		"image": "https://lithi.io/file/milkgamessite.png",
 		"time": 1572117211,
