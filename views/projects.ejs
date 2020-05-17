@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="The official website for all things related to MilkGames and his amazing projects. *cough cough*">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title>MilkGames</title>
+  <meta name="flattr:id" content="zlnq5z">
+  <meta name="description" content="The official website for all things related to MilkGames and his amazing projects. *cough cough*">
+  <!-- Google / Search Engine Tags -->
+  <meta itemprop="name" content="MilkGames">
+  <meta itemprop="description" content="The official website for all things related to MilkGames and his amazing projects. *cough cough*">
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="https://milkgames.pw">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="MilkGames">
+  <meta property="og:description" content="The official website for all things related to MilkGames and his amazing projects. *cough cough*">
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MilkGames">
+  <meta name="twitter:description" content="The official website for all things related to MilkGames and his amazing projects. *cough cough*">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" href="images/favicon.png">
+  <% include partials/required.ejs %>
+  <script src="/semantic.min.js"></script>
+</head>
+<body>
+
+  <% include partials/header.ejs %>
+  <div id="main">
+
+  <div class="ui main text container">
+    <h1 class="ui header">Portfolio</h1>
+    <p>Feel free to browse! Note this page or some media may be outdated.</p>
+    <div class="ui cards">
+    <% for(var i=0; i < projects.length; i++) { %>
+    <% if (projects[i].type == "seperator") { continue; } %>
+    <div class="ui card">
+    <div class="content">
+      <div class="header"><%= projects[i].name %></div>
+      <div class="meta">
+        <p></p>
+      </div>
+      <div class="description">
+        <%= projects[i].shortdesc %>
+      </div>
+    </div>
+    <div class="extra content">
+      <span class="right floated">
+        <%= new Date(projects[i].time * 1000).toUTCString() %>
+      </span>
+      <span><% projects[i].tags.forEach(function (tag) { %>
+        <% if (tag == "deprecated") { %>
+          <span class="ui horizontal red label"><%= tag %></span>
+        <% } else { %>
+          <span class="ui horizontal label"><%= tag %></span>
+        <% } %>
+        <% }) %></span>
+    </div>
+    <a href="/project/<%= projects[i].url %>">
+    <div class="ui bottom attached button">
+      <i class="globe icon"></i>
+      Visit project page
+    </div>
+    <% if (projects[i].opensource == true) { %>
+    <a href="<%= projects[i].opensourceurl %>">
+    <div class="ui bottom attached button green">
+      <i class="globe icon"></i>
+      Visit open-source page
+    </div>
+    <% } %>
+    </a>
+  </div>
+
+    <% } %>
+  </div>
+</div>
+
+
+
+  
+
+  <% include partials/footer.ejs %>
+</div>
+</body>
+</html>

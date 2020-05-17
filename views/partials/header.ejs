@@ -1,0 +1,22 @@
+  <div class="ui fixed inverted menu">
+    <div class="ui container">
+      <a href="/" class="header item">
+        <img class="logo" src="//lithi.io/file/hPDc.png"> MilkGames
+      </a>
+      <a href="/" class="item">Home</a>
+      <div class="ui simple dropdown item">
+        <a href="/projects">Projects <i class="dropdown icon"></i></a>
+        <div class="menu">
+          <% for(var i=0; i < projects.length; i++) { %>
+          <% if (projects[i].type == "seperator") { %>
+          <div class="divider"></div>
+          <div class="header"><%= projects[i].name %></div>
+          <% } else { %>
+          <a class="item" href="/project/<%= projects[i].url %>"><%= projects[i].name %></a>
+          <% } } %>
+
+        </div>
+      </div>
+      <a href="/feedback" class="item">Feedback</a>
+    </div>
+  </div>

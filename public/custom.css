@@ -1,0 +1,35 @@
+#main {
+  overflow: auto;
+  height: 100%;
+  width: 100%;
+}
+body {
+  background-color: #FFFFFF;
+}
+.ui.menu .item img.logo {
+  margin-right: 5px;
+}
+.main.container {
+  max-height: 100%;
+  margin-top: 7em;
+}
+/*.ui.footer.segment {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:95px; 
+
+/* Height of the footer */
+.imgproject {
+  max-width: 100%;/*Instead of 700px*/
+  max-height: 100%;
+}
+
+@media only screen and (max-width: 767px) {
+  .ui.menu>.ui.container {
+    display:block;
+  }
+  .ui.header:first-child {
+	 margin-top: 7em;
+}
+}

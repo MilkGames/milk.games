@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <% console.log(project) %>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="<%= project.shortdesc %>">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title><%= project.name %></title>
+  <meta name="flattr:id" content="zlnq5z">
+  <meta name="description" content="<%= project.shortdesc %>">
+  <!-- Google / Search Engine Tags -->
+  <meta itemprop="name" content="<%= project.name %>">
+  <meta itemprop="description" content="<%= project.shortdesc %>">
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="https://milkgames.pw">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="<%= project.name %>">
+  <meta property="og:description" content="<%= project.shortdesc %>">
+  <meta property="og:image" content="<%= project.image %>">
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="<%= project.name %>">
+  <meta name="twitter:description" content="<%= project.shortdesc %>">
+  <meta name="twitter:image" content="<%= project.image %>">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" href="images/favicon.png">
+  <style type="text/css">
+    .imgproject {
+      max-width: 700px;
+      max-height: 700px;
+    }
+  </style>
+  <% include partials/required.ejs %>
+</head>
+<body>
+
+  <% include partials/header.ejs %>
+
+  <div id="main">
+
+  <div class="ui main text container">
+    <h1 class="ui header"><%= project.name %></h1>
+    <span><% project.tags.forEach(function (tag) { %>
+      <% if (tag == "deprecated") { %>
+      <span class="ui horizontal red label"><%= tag %></span>
+      <% } else { %>
+      <span class="ui horizontal label"><%= tag %></span>
+      <% } %>
+      <% }) %></span>
+    <p><%= project.shortdesc %></p>
+    <% if (project.opensource == true) { %>
+    <p><a href="<%= project.opensourceurl %>">Visit open-source page</a></p>
+    <% } %>
+    <img class="imgproject" src="<%= project.image %>">
+    <p><%- project.html %></p>
+  </div>
+  <% include partials/footer.ejs %>
+</div>
+</body>
+</html>

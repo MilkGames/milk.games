@@ -1,0 +1,93 @@
+[
+	{
+		"name": "Lithiio App",
+		"url": "lithiio",
+		"tags": ["app", "android", "lithiio", "deprecated"],
+		"opensource": true,
+		"opensourceurl": "https://github.com/lithium720/Lithiio-Android",
+		"type": "project",
+		"image": "https://lh3.googleusercontent.com/uTJsHScIiZ5QBjBtvO8B8YULPhTdI2xEHAuLnDOHQQL1O-VanM9tpitsAycEuM38HhvM=s180-rw",
+		"time": 1521411660,
+		"shortdesc": "An app for lith.io. Currently unmaintained and awaiting rewrite.",
+		"html": "<h4>History</h4><p>The project started around 21/11/2017, but was canceled due to the app not working in general.</p><p>The project was revived around 11/03/2018, within a day uploads were working. On the 16th, intents were added.</p><p>On 18/03/2018, the app was live on Google Play, with a really basic and ugly UI.</p><p>On 26/03/2018, the app was updated to include analytics and a new UI.</p><p>On 14/04/2018, the app was updated to include a history table.</p><p>On 25/05/2018, the app was updated to include a camera feature, and a settings page.</p><p>On 11/07/2018, the app was updated to include multi upload support via intents, and more privacy settings."
+	},
+	{
+		"name": "node-lithiio-upload",
+		"url": "node-lithiio-upload",
+		"tags": ["node", "js", "lithiio"],
+		"opensource": true,
+		"opensourceurl": "https://github.com/MilkGames/node-lithiio-upload",
+		"type": "project",
+		"time": 1525811753,
+		"shortdesc": "An easy to use node module to use the Lithi.io API."
+	},
+	{
+		"name": "milk.games",
+		"url": "site",
+		"tags": ["site", "web"],
+		"type": "project",
+		"image": "https://lithi.io/file/milkgamessite.png",
+		"time": 1572117211,
+		"shortdesc": "A personal project to list projects and other things."
+	},
+	{
+		"name": "Jimbot",
+		"url": "jimbot",
+		"tags": ["discord", "discord.js", "bot"],
+		"type": "project",
+		"image": "https://lithi.io/file/jimbotinaction.png",
+		"time": 1420070400,
+		"shortdesc": "A Discord bot made in NodeJS which is sort of maintained.",
+		"html": "Jimbot in action"
+	},
+	{
+		"name": "XYZ",
+		"url": null,
+		"type": "seperator"
+	},
+	{
+		"name": "Police Exam",
+		"url": "policeexam",
+		"tags": ["police", "xyz", "gmod", "garrys mod"],
+		"type": "project",
+		"image": "https://lithi.io/file/policeexam.png",
+		"time": 1565548591,
+		"shortdesc": "A police exam that's easily configurable, and handles giving out whitelists. No human trainers involved."
+	},
+	{
+		"name": "Undercover System",
+		"url": "undercover",
+		"tags": ["undercover", "xyz", "gmod", "garrys mod"],
+		"type": "project",
+		"image": "https://lithi.io/file/ucsystem.png",
+		"time": 1570715603,
+		"shortdesc": "An easy to use, and sexy undercover system."
+	},
+	{
+		"name": "PNC System",
+		"url": "pnc",
+		"tags": ["pnc", "xyz", "gmod", "garrys mod"],
+		"type": "project",
+		"image": "https://cdn.discordapp.com/attachments/438296243265863680/665635434826694686/unknown.png",
+		"time": 1581206767,
+		"shortdesc": "A simple PNC system for searching subjects & viewing wanted people"
+	},
+	{
+		"name": "TicketBook",
+		"url": "ticketbook",
+		"tags": ["ticketbook", "xyz", "gmod", "garrys mod"],
+		"type": "project",
+		"image": "https://cdn.discordapp.com/attachments/438296243265863680/666079387812102212/unknown.png",
+		"time": 1582711026,
+		"shortdesc": "A remade ticketbook using XYZ UI"
+	},
+	{
+		"name": "Weapon Checker",
+		"url": "weaponchecker",
+		"tags": ["police", "xyz", "gmod", "garrys mod"],
+		"type": "project",
+		"image": "https://cdn.discordapp.com/attachments/438296243265863680/694288075609604156/unknown.png",
+		"time": 1585597932,
+		"shortdesc": "A weapon checker that allows guards to view weapons, and police to strip those weapons."
+	}
+]

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="The official website for all things related to MilkGames and his amazing projects. *cough cough*">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title>MilkGames</title>
+  <meta name="flattr:id" content="zlnq5z">
+  <meta name="description" content="The official website for all things related to MilkGames and his amazing projects. *cough cough*">
+  <!-- Google / Search Engine Tags -->
+  <meta itemprop="name" content="MilkGames">
+  <meta itemprop="description" content="The official website for all things related to MilkGames and his amazing projects. *cough cough*">
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="https://milkgames.pw">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="MilkGames">
+  <meta property="og:description" content="The official website for all things related to MilkGames and his amazing projects. *cough cough*">
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MilkGames">
+  <meta name="twitter:description" content="The official website for all things related to MilkGames and his amazing projects. *cough cough*">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" href="images/favicon.png">
+  <script src="//hcaptcha.com/1/api.js" async defer></script>
+  <% include partials/required.ejs %>
+</head>
+<body>
+
+  <% include partials/header.ejs %>
+
+  <div id="main">
+
+  <div class="ui main text container">
+    <h1 class="ui header">Feedback Form</h1>
+    <form class="ui form" action="/feedback" method="post">
+      <div class="field">
+        <label>Feedback:</label>
+        <textarea name="feedback"></textarea>
+      </div>
+      <div class="h-captcha" data-sitekey="b17054fd-d22c-471c-a163-da1f23186c27"></div>
+      <br>
+      <button class="ui button" type="submit">Submit</button>
+    </form>
+  </div>
+
+  <% include partials/footer.ejs %>
+</div>
+<script>
+  function cb(token) {
+    console.log('token', token);
+    var input = document.createElement('input');
+    input.setAttribute('type', 'text');
+    input.setAttribute('name', 'g-recaptcha-response');
+    input.setAttribute('value', token);
+    input.setAttribute('hidden', 'true')
+    document.getElementsByTagName('form')[0].appendChild(input);
+  }
+</script>
+</body>
+</html>
