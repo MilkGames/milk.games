@@ -46,16 +46,5 @@
 
   <% include partials/footer.ejs %>
 </div>
-<script>
-  function cb(token) {
-    console.log('token', token);
-    var input = document.createElement('input');
-    input.setAttribute('type', 'text');
-    input.setAttribute('name', 'g-recaptcha-response');
-    input.setAttribute('value', token);
-    input.setAttribute('hidden', 'true')
-    document.getElementsByTagName('form')[0].appendChild(input);
-  }
-</script>
 </body>
 </html>
