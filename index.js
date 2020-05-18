@@ -69,20 +69,26 @@ app.get('/api/projects.json', function(req, res) {
 
 app.post('/feedback', function(req, res) {
 	if (req.body.feedback.length < 5) { res.end("Feedback must be longer than 5 characters."); return; }
-	verify(config.cap, req.body["h-captcha-response"])
-	.then(function(info){
-		console.log(info)
-		if (info.success == false) { res.end("Invalid Captcha"); return; } 
+	if (!config.debug) {
+		verify(config.cap, req.body["h-captcha-response"])
+		.then(function(info){
+			console.log(info)
+			if (info.success == false) { res.end("Invalid Captcha"); return; } 
+			db.query('INSERT INTO feedback SET feedback = ?, ip = ?', [req.body.feedback, req.ip], function (error, results, fields) { 
+				if (error) throw error;
+			})
+			res.redirect("/")
+		})
+		.catch(function(err){
+			console.log(err)
+			res.end("Invalid Captcha")
+		});
+	} else {
 		db.query('INSERT INTO feedback SET feedback = ?, ip = ?', [req.body.feedback, req.ip], function (error, results, fields) { 
 			if (error) throw error;
 		})
 		res.redirect("/")
-	})
-	.catch(function(err){
-		console.log(err)
-		res.end("Invalid Captcha")
-	});
-
+	}
 });
 
 app.get('/admin', function(req, res) {
