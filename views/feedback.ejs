@@ -32,19 +32,18 @@
   <div id="main">
 
   <div class="ui main text container">
-    <h1 class="ui header">Feedback Form</h1>
-    <form class="ui form" action="/feedback" method="post">
+    <h1 class="ui inverted header">Feedback Form</h1>
+    <form class="ui inverted form" action="/feedback" method="post">
       <div class="field">
-        <label>Feedback:</label>
+        <label>Type some useful feedback here:</label>
         <textarea name="feedback"></textarea>
       </div>
       <div class="h-captcha" data-sitekey="b17054fd-d22c-471c-a163-da1f23186c27"></div>
       <br>
-      <button class="ui button" type="submit">Submit</button>
+      <button class="ui primary button" type="submit">Submit</button>
     </form>
   </div>
 
-  <% include partials/footer.ejs %>
 </div>
 </body>
 </html>

@@ -31,17 +31,14 @@
   <div id="main">
 
   <div class="ui main text container">
-    <h1 class="ui header">Portfolio</h1>
+    <h1 class="ui inverted header">Portfolio</h1>
     <p>Feel free to browse! Note this page or some media may be outdated.</p>
-    <div class="ui cards">
+    <div class="ui inverted cards">
     <% for(var i=0; i < projects.length; i++) { %>
     <% if (projects[i].type == "seperator") { continue; } %>
     <div class="ui card">
     <div class="content">
       <div class="header"><%= projects[i].name %></div>
-      <div class="meta">
-        <p></p>
-      </div>
       <div class="description">
         <%= projects[i].shortdesc %>
       </div>
@@ -58,30 +55,24 @@
         <% } %>
         <% }) %></span>
     </div>
+    <% if (projects[i].opensource == true) { %>
+    <a href="<%= projects[i].opensourceurl %>">
+    <div class="ui attached button green">
+      <i class="globe icon"></i>
+      Visit open-source page
+    </div>
+    <% } %>
     <a href="/project/<%= projects[i].url %>">
     <div class="ui bottom attached button">
       <i class="globe icon"></i>
       Visit project page
     </div>
-    <% if (projects[i].opensource == true) { %>
-    <a href="<%= projects[i].opensourceurl %>">
-    <div class="ui bottom attached button green">
-      <i class="globe icon"></i>
-      Visit open-source page
-    </div>
-    <% } %>
+
     </a>
   </div>
-
     <% } %>
   </div>
 </div>
-
-
-
-  
-
-  <% include partials/footer.ejs %>
 </div>
 </body>
 </html>

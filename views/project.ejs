@@ -39,7 +39,7 @@
   <div id="main">
 
   <div class="ui main text container">
-    <h1 class="ui header"><%= project.name %></h1>
+    <h1 class="ui inverted header"><%= project.name %></h1>
     <span><% project.tags.forEach(function (tag) { %>
       <% if (tag == "deprecated") { %>
       <span class="ui horizontal red label"><%= tag %></span>
@@ -54,7 +54,6 @@
     <img class="imgproject" src="<%= project.image %>">
     <p><%- project.html %></p>
   </div>
-  <% include partials/footer.ejs %>
 </div>
 </body>
 </html>
