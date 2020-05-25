@@ -5,8 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="The official website for all things related to MilkGames and his amazing projects. *cough cough*">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  <title>MilkGames</title>
-  <script src="/admin.js"></script>
+  <title>MilkGames Blog - <%= blog.title %></title>
+  <script src="/timeago.min.js"></script>
   <meta name="flattr:id" content="zlnq5z">
   <meta name="description" content="The official website for all things related to MilkGames and his amazing projects. *cough cough*">
   <!-- Google / Search Engine Tags -->
@@ -23,6 +23,7 @@
   <meta name="twitter:description" content="The official website for all things related to MilkGames and his amazing projects. *cough cough*">
   <meta name="mobile-web-app-capable" content="yes">
   <link rel="shortcut icon" href="images/favicon.png">
+  <script src="//hcaptcha.com/1/api.js" async defer></script>
   <% include partials/required.ejs %>
 </head>
 <body>
@@ -32,46 +33,18 @@
   <div id="main">
 
     <div class="ui main text container">
-      <h1 class="ui inverted header">Admin Page</h1>
-      <% if (authed == true) { %>
-      <form class="ui inverted form" action="/blog/post" id="blogForm" method="post">
-        <div class="field">
-          <label>Title:</label>
-          <input type="text" name="title">
-          <label>Body:</label>
-          <textarea type="text" name="body"></textarea> 
-          <label>Image URL:</label>
-          <input type="text" name="img">
-        </div>
-        <button class="ui primary button" type="submit">Post</button>
-        <button class="ui button" type="button" onclick=previewBlogPost()>Preview</button>
-      </form>
-      <table class="ui celled inverted table">
-        <thead>
-          <tr>
-            <th>Feedback</th>
-            <th>IP</th>
-          </tr></thead>
-          <tbody>
-            <% for(var i=0; i < feedback.length; i++) { %>
-            <tr>
-              <td data-label="Feedback"><%= feedback[i].feedback %></td>
-              <td data-label="IP"><%= feedback[i].ip %></td>
-            </tr>
-            <% } %>
-          </tbody>
-        </table>
-        <% } else { %>
-        <form class="ui inverted form" action="/admin/login" method="POST">
-          <div class="field">
-            <label>Password:</label>
-            <input type="password" name="password">
-          </div>
-          <button class="ui button" type="submit">Login</button>
-        </form>
-        <% } %>
+
+      <div class="ui huge inverted header"><%= blog.title %>
+        <div class="sub header timestamp" style="color: rgba(255,255,255,.7);" datetime="<%= blog.time * 1000 %>"></div>
       </div>
 
+      <% if (blog.img) { %>
+      <img src="<%= blog.img %>">
+      <% } %>
+      <p><%- blog.body %></p>
+
     </div>
-  </body>
-  </html>
+  </div>
+  <script>timeago.render(document.querySelectorAll('.timestamp'));</script>
+</body>
+</html>
