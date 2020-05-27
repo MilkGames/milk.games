@@ -50,13 +50,11 @@
         <thead>
           <tr>
             <th>Feedback</th>
-            <th>IP</th>
           </tr></thead>
           <tbody>
             <% for(var i=0; i < feedback.length; i++) { %>
             <tr>
               <td data-label="Feedback"><%= feedback[i].feedback %></td>
-              <td data-label="IP"><%= feedback[i].ip %></td>
             </tr>
             <% } %>
           </tbody>

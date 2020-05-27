@@ -17,7 +17,7 @@ db.connect(function(err) {
 	if (err) throw err;
 	console.log("Connected to DB.");
   // Prepare DB
-  db.query("CREATE TABLE IF NOT EXISTS feedback (id INTEGER AUTO_INCREMENT PRIMARY KEY, feedback TEXT, ip TEXT)", function (err, result) {
+  db.query("CREATE TABLE IF NOT EXISTS feedback (id INTEGER AUTO_INCREMENT PRIMARY KEY, feedback TEXT)", function (err, result) {
   	if (err) throw err;
   });
   db.query("CREATE TABLE IF NOT EXISTS blog (id INTEGER AUTO_INCREMENT PRIMARY KEY, title TEXT, body TEXT, img TEXT, time INT)", function (err, result) {
@@ -85,7 +85,7 @@ app.post('/feedback', function(req, res) {
 		verify(config.cap, req.body["h-captcha-response"])
 		.then(function(info){
 			if (info.success == false) { res.end("Invalid Captcha"); return; } 
-			db.query('INSERT INTO feedback SET feedback = ?, ip = ?', [req.body.feedback, req.ip], function (error, results, fields) { 
+			db.query('INSERT INTO feedback SET feedback = ?', [req.body.feedback], function (error, results, fields) { 
 				if (error) throw error;
 			})
 			res.redirect("/")
@@ -94,7 +94,7 @@ app.post('/feedback', function(req, res) {
 			res.end("Invalid Captcha")
 		});
 	} else {
-		db.query('INSERT INTO feedback SET feedback = ?, ip = ?', [req.body.feedback, req.ip], function (error, results, fields) { 
+		db.query('INSERT INTO feedback SET feedback = ?', [req.body.feedback], function (error, results, fields) { 
 			if (error) throw error;
 		})
 		res.redirect("/")
