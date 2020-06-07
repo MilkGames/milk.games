@@ -2,7 +2,7 @@
 	{
 		"name": "Lithiio App",
 		"url": "lithiio",
-		"tags": ["app", "android", "lithiio", "deprecated"],
+		"tags": ["app", "android", "lithiio"],
 		"opensource": true,
 		"opensourceurl": "https://github.com/lithium720/Lithiio-Android",
 		"type": "project",
@@ -43,9 +43,19 @@
 		"html": "Jimbot in action"
 	},
 	{
-		"name": "XYZ",
+		"name": "Garry's Mod",
 		"url": null,
 		"type": "seperator"
+	},
+	{
+		"name": "xWarn",
+		"url": "xwarn",
+		"opensource": true,
+		"opensourceurl": "https://github.com/MilkGames/xWarn",
+		"tags": ["xadmin", "gmod", "garrys mod"],
+		"type": "project",
+		"time": 1565200735,
+		"shortdesc": "An addon for xAdmin that allows you to warn players for breaking the rules."
 	},
 	{
 		"name": "Police Exam",
