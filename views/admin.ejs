@@ -46,6 +46,12 @@
         <button class="ui primary button" type="submit">Post</button>
         <button class="ui button" type="button" onclick=previewBlogPost()>Preview</button>
       </form>
+      <div class="ui inverted segment" id="fileUpload">
+      <form class="ui inverted form" action="/file/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" class="ui file input" style="width: 50%;">
+        <button class="ui primary button" style="width: 49%;" type="submit">Upload mp4</button>
+      </form>
+      </div>
       <table class="ui celled inverted table">
         <thead>
           <tr>

@@ -1,6 +1,6 @@
 var express = require('express'),
 bodyParser = require('body-parser'), 
-session  = require('express-session')
+session  = require('express-session');
 
 const {verify} = require('hcaptcha');
 
@@ -125,6 +125,38 @@ app.get('/blog', function(req, res) {
 		if (error) throw error;
 		res.render('blog', {blog: results});
 	});
+});
+
+app.use(express.static(__dirname + 'videos/'));
+
+const multer  = require('multer')
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'files/')
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.originalname)
+  }
+})
+const upload = multer({ storage: storage })
+
+app.post('/file/upload', upload.single('file'), function(req, res) {
+	if (!req.session.authed) { res.sendStatus(401); return; }
+	res.redirect('/file/' + req.file.originalname)
+});
+
+app.get('/file/:name', function(req, res) {
+	var fileName = req.params.name
+	res.sendFile(fileName, {
+		root: path.join(__dirname, 'files'),
+		dotfiles: 'deny',
+	}, function (err) {
+		if (err) {
+			res.sendStatus(404);
+		} else {
+			console.log('Sent:', fileName)
+		}
+	})
 });
 
 app.post('/blog/post', function(req, res) {

@@ -60,8 +60,8 @@ typings/
 # config file
 config.json
 
-# db file
-data.db
+# files folder
+files/
 
 # private key
 privatekey.pem
