@@ -6,7 +6,7 @@ const {verify} = require('hcaptcha');
 
 const config = require('./config.json');
 const mysql = require('mysql');
-var db = mysql.createConnection({
+var db = mysql.createPool({
 	host: config.dbhost,
 	user: config.dbuser,
 	password: config.dbpass,
