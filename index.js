@@ -13,16 +13,11 @@ var db = mysql.createPool({
 	database: "site"
 });
 
-db.connect(function(err) {
+db.query("CREATE TABLE IF NOT EXISTS feedback (id INTEGER AUTO_INCREMENT PRIMARY KEY, feedback TEXT)", function (err, result) {
 	if (err) throw err;
-	console.log("Connected to DB.");
-  // Prepare DB
-  db.query("CREATE TABLE IF NOT EXISTS feedback (id INTEGER AUTO_INCREMENT PRIMARY KEY, feedback TEXT)", function (err, result) {
-  	if (err) throw err;
-  });
-  db.query("CREATE TABLE IF NOT EXISTS blog (id INTEGER AUTO_INCREMENT PRIMARY KEY, title TEXT, body TEXT, img TEXT, time INT)", function (err, result) {
-  	if (err) throw err;
-  });
+});
+db.query("CREATE TABLE IF NOT EXISTS blog (id INTEGER AUTO_INCREMENT PRIMARY KEY, title TEXT, body TEXT, img TEXT, time INT)", function (err, result) {
+	if (err) throw err;
 });
 
 function findItem(arr, key, value) {
