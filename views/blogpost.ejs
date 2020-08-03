@@ -34,6 +34,8 @@
 
     <div class="ui main text container">
 
+      <div class="ui raised segment inverted">
+
       <div class="ui huge inverted header"><%= blog.title %>
         <div class="sub header timestamp" style="color: rgba(255,255,255,.7);" datetime="<%= blog.time * 1000 %>"></div>
       </div>
@@ -44,6 +46,7 @@
       <p><%- blog.body %></p>
 
     </div>
+  </div>
   </div>
   <script>timeago.render(document.querySelectorAll('.timestamp'));</script>
 </body>
