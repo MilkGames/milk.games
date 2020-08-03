@@ -117,7 +117,7 @@ app.get('/admin/login', function(req, res) {
 });
 
 app.get('/blog', function(req, res) {
-	db.query('SELECT * FROM blog WHERE password IS NULL ORDER BY id DESC', function (error, results, fields) { 
+	db.query('SELECT * FROM blog WHERE password = "" ORDER BY id DESC', function (error, results, fields) { 
 		if (error) throw error;
 		res.render('blog', {blog: results});
 	});
