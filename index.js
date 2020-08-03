@@ -16,7 +16,7 @@ var db = mysql.createPool({
 db.query("CREATE TABLE IF NOT EXISTS feedback (id INTEGER AUTO_INCREMENT PRIMARY KEY, feedback TEXT)", function (err, result) {
 	if (err) throw err;
 });
-db.query("CREATE TABLE IF NOT EXISTS blog (id INTEGER AUTO_INCREMENT PRIMARY KEY, title TEXT, body TEXT, img TEXT, time INT)", function (err, result) {
+db.query("CREATE TABLE IF NOT EXISTS blog (id INTEGER AUTO_INCREMENT PRIMARY KEY, title TEXT, body TEXT, img TEXT, password TEXT, time INT)", function (err, result) {
 	if (err) throw err;
 });
 
@@ -61,6 +61,7 @@ app.get('/project/:url', function(req, res) {
 app.get('/blog/post/:id', function(req, res) {
 	db.query('SELECT * FROM blog WHERE id = ?', [req.params.id], function (error, results, fields) { 
 		if (results.length == 0) { res.sendStatus(404); return; }
+		if (results[0].password && results[0].password !== req.query.password) { res.sendStatus(404); return; }
 		if (error) throw error;
 		res.render('blogpost', {blog: results[0]});
 	});
@@ -116,7 +117,7 @@ app.get('/admin/login', function(req, res) {
 });
 
 app.get('/blog', function(req, res) {
-	db.query('SELECT * FROM blog ORDER BY id DESC', function (error, results, fields) { 
+	db.query('SELECT * FROM blog WHERE password IS NULL ORDER BY id DESC', function (error, results, fields) { 
 		if (error) throw error;
 		res.render('blog', {blog: results});
 	});
@@ -157,9 +158,9 @@ app.get('/file/:name', function(req, res) {
 app.post('/blog/post', function(req, res) {
 	if (!req.session.authed) { res.sendStatus(401); return; }
 	if (!req.body.title || !req.body.body) { res.sendStatus(400); return; }
-	db.query('INSERT INTO blog SET title = ?, body = ?, img = ?, time = UNIX_TIMESTAMP()', [req.body.title, req.body.body, req.body.img], function (error, results, fields) { 
+	db.query('INSERT INTO blog SET title = ?, body = ?, img = ?, password = ?, time = UNIX_TIMESTAMP()', [req.body.title, req.body.body, req.body.img, req.body.password], function (error, results, fields) { 
 		if (error) throw error;
-		res.redirect("/blog/post/" + results.insertId)
+		res.redirect("/blog/post/" + results.insertId + (req.body.password ? '?password='+req.body.password : ''))
 	})
 });
 
