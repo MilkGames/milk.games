@@ -3,7 +3,15 @@ bodyParser = require('body-parser'),
 session  = require('express-session');
 
 const {verify} = require('hcaptcha');
-
+const rateLimit = require("express-rate-limit");
+const fileLimiter = rateLimit({
+  windowMs: 10 * 60 * 1000,
+  max: 110
+});
+const submitLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 15
+});
 const config = require('./config.json');
 const mysql = require('mysql');
 var db = mysql.createPool({
@@ -58,7 +66,7 @@ app.get('/project/:url', function(req, res) {
 	res.render('project', {project: app.locals.projects[findItem(app.locals.projects, "url", req.params.url)]});
 });
 
-app.get('/blog/post/:id', function(req, res) {
+app.get('/blog/post/:id', fileLimiter, function(req, res) {
 	db.query('SELECT * FROM blog WHERE id = ?', [req.params.id], function (error, results, fields) { 
 		if (results.length == 0) { res.sendStatus(404); return; }
 		if (results[0].password && results[0].password !== req.query.password) { res.sendStatus(404); return; }
@@ -75,7 +83,7 @@ app.get('/api/projects.json', function(req, res) {
 	res.json(app.locals.projects)
 });
 
-app.post('/feedback', function(req, res) {
+app.post('/feedback', submitLimiter, function(req, res) {
 	if (req.body.feedback.length < 5) { res.end("Feedback must be longer than 5 characters."); return; }
 	if (!config.debug) {
 		verify(config.cap, req.body["h-captcha-response"])
@@ -108,7 +116,7 @@ app.get('/admin', function(req, res) {
 	}
 });
 
-app.get('/admin/login', function(req, res) {
+app.get('/admin/login', submitLimiter, function(req, res) {
 	if (req.session.authed == true) {
 		res.redirect("/admin");
 	} else {
@@ -116,7 +124,7 @@ app.get('/admin/login', function(req, res) {
 	}
 });
 
-app.get('/blog', function(req, res) {
+app.get('/blog', fileLimiter, function(req, res) {
 	db.query('SELECT * FROM blog WHERE password = "" ORDER BY id DESC', function (error, results, fields) { 
 		if (error) throw error;
 		res.render('blog', {blog: results});
@@ -141,7 +149,7 @@ app.post('/file/upload', upload.single('file'), function(req, res) {
 	res.redirect('/file/' + req.file.originalname)
 });
 
-app.get('/file/:name', function(req, res) {
+app.get('/file/:name', fileLimiter, function(req, res) {
 	var fileName = req.params.name
 	res.sendFile(fileName, {
 		root: path.join(__dirname, 'files'),
