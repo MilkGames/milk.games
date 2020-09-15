@@ -76,6 +76,17 @@
 		"shortdesc": "An easy to use, and sexy undercover system."
 	},
 	{
+		"name": "Metal Detector",
+		"url": "metaldetector",
+		"tags": ["prison", "xyz", "gmod", "garrys mod"],
+		"type": "project",
+		"image": "https://lithi.io/file/metaldetector.png",
+		"time": 1573047117,
+		"shortdesc": "A simple metal detector entity that detects illegal items based on the DarkRP config.",
+		"pstyle": "text-align:center;",
+		"html": "<iframe width='560' height='315' src='https://www.youtube-nocookie.com/embed/eGjuoZkHgOU' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+	},
+	{
 		"name": "PNC System",
 		"url": "pnc",
 		"tags": ["pnc", "xyz", "gmod", "garrys mod"],
