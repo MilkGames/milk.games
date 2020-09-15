@@ -51,7 +51,7 @@
     <p><a href="<%= project.opensourceurl %>">Visit open-source page</a></p>
     <% } %>
     <img class="imgproject" src="<%= project.image %>">
-    <p><%- project.html %></p>
+    <p style="<%- project.pstyle || "" %>"><%- project.html %></p>
   </div>
 </div>
 </body>
