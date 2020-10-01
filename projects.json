@@ -112,5 +112,14 @@
 		"image": "https://cdn.discordapp.com/attachments/438296243265863680/694288075609604156/unknown.png",
 		"time": 1585597932,
 		"shortdesc": "A weapon checker that allows guards to view weapons, and police to strip those weapons."
+	},
+	{
+		"name": "Organization System",
+		"url": "orgsystem",
+		"tags": ["org", "xyz", "gmod", "garrys mod"],
+		"type": "project",
+		"image": "https://lithi.io/file/JSqZ.jpg",
+		"time": 1601564721,
+		"shortdesc": "An organization system with permissions, roles, an inventory and various other features."
 	}
 ]
