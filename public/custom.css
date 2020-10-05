@@ -26,12 +26,3 @@ p {
   max-width: 100%;/*Instead of 700px*/
   max-height: 100%;
 }
-
-@media only screen and (max-width: 767px) {
-  .ui.menu>.ui.container {
-    display:block;
-  }
-  .ui.header:first-child {
-	 margin-top: 8em;
-}
-}
