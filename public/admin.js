@@ -1,3 +1,5 @@
+var md = window.markdownit();
+
 function previewBlogPost() {
 	if (document.getElementById("blogPreview")) {
 		document.getElementById("blogPreview").remove()
@@ -8,7 +10,7 @@ function previewBlogPost() {
 		<div class="sub header timestamp" style="color: rgba(255,255,255,.7);">just now</div>
 		</div>
 
-		<p>${document.getElementsByName("body")[0].value}</p>
+		<p>${md.render(document.getElementsByName("body")[0].value)}</p>
 		</div>
 		`);
 }

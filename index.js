@@ -1,8 +1,9 @@
-var express = require('express'),
+const express = require('express'),
 bodyParser = require('body-parser'), 
 session  = require('express-session');
 
 const {verify} = require('hcaptcha');
+const md = require('markdown-it')();
 const rateLimit = require("express-rate-limit");
 const fileLimiter = rateLimit({
   windowMs: 10 * 60 * 1000,
@@ -38,7 +39,7 @@ function findItem(arr, key, value) {
 }
 
 const app = express();
-var path = require('path');
+const path = require('path');
 app.locals.projects = require('./projects.json');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
@@ -71,7 +72,7 @@ app.get('/blog/post/:id', fileLimiter, function(req, res) {
 		if (results.length == 0) { res.sendStatus(404); return; }
 		if (results[0].password && results[0].password !== req.query.password) { res.sendStatus(404); return; }
 		if (error) throw error;
-		res.render('blogpost', {blog: results[0]});
+		res.render('blogpost', {blog: results[0], bodyParsed: md.render(results[0].body)});
 	});
 });
 
