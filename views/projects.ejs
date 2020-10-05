@@ -32,10 +32,10 @@
   <div class="ui main text container">
     <h1 class="ui inverted header">Portfolio</h1>
     <p>Feel free to browse! Note this page or some media may be outdated.</p>
-    <div class="ui inverted cards">
+    <div class="ui inverted stackable cards">
     <% for(var i=0; i < projects.length; i++) { %>
     <% if (projects[i].type == "seperator") { continue; } %>
-    <div class="ui card">
+    <div class="card">
     <div class="content">
       <div class="header"><%= projects[i].name %></div>
       <div class="description">
