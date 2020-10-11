@@ -28,7 +28,7 @@
 		"opensource": true,
 		"opensourceurl": "https://github.com/MilkGames/milk.games",
 		"type": "project",
-		"image": "https://lithi.io/file/milkgamessite.png",
+		"image": "https://milk.games/file/site.png",
 		"time": 1572117211,
 		"shortdesc": "A personal project to list projects and other things."
 	},
@@ -37,7 +37,7 @@
 		"url": "jimbot",
 		"tags": ["discord", "discord.js", "bot"],
 		"type": "project",
-		"image": "https://lithi.io/file/jimbotinaction.png",
+		"image": "https://milk.games/file/jimbotinaction.png",
 		"time": 1420070400,
 		"shortdesc": "A Discord bot made in NodeJS which is sort of maintained.",
 		"html": "Jimbot in action"
@@ -62,7 +62,7 @@
 		"url": "policeexam",
 		"tags": ["police", "xyz", "gmod", "garrys mod"],
 		"type": "project",
-		"image": "https://lithi.io/file/policeexam.png",
+		"image": "https://milk.games/file/policeexam.png",
 		"time": 1565548591,
 		"shortdesc": "A police exam that's easily configurable, and handles giving out whitelists. No human trainers involved."
 	},
@@ -71,7 +71,7 @@
 		"url": "undercover",
 		"tags": ["undercover", "xyz", "gmod", "garrys mod"],
 		"type": "project",
-		"image": "https://lithi.io/file/ucsystem.png",
+		"image": "https://milk.games/file/ucsystem.png",
 		"time": 1570715603,
 		"shortdesc": "An easy to use, and sexy undercover system."
 	},
@@ -80,7 +80,7 @@
 		"url": "metaldetector",
 		"tags": ["prison", "xyz", "gmod", "garrys mod"],
 		"type": "project",
-		"image": "https://lithi.io/file/metaldetector.png",
+		"image": "https://milk.games/file/metaldetector.png",
 		"time": 1573047117,
 		"shortdesc": "A simple metal detector entity that detects illegal items based on the DarkRP config.",
 		"pstyle": "text-align:center;",
@@ -118,7 +118,7 @@
 		"url": "orgsystem",
 		"tags": ["org", "xyz", "gmod", "garrys mod"],
 		"type": "project",
-		"image": "https://lithi.io/file/JSqZ.jpg",
+		"image": "https://milk.games/file/orgsystem.jpg",
 		"time": 1601564721,
 		"shortdesc": "An organization system with permissions, roles, an inventory and various other features."
 	}
