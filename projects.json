@@ -114,6 +114,26 @@
 		"shortdesc": "A weapon checker that allows guards to view weapons, and police to strip those weapons."
 	},
 	{
+		"name": "UPS System",
+		"url": "ups",
+		"tags": ["ups", "xyz", "gmod", "garrys mod"],
+		"type": "project",
+		"image": "https://milk.games/file/ups.png",
+		"time": 1597287383,
+		"shortdesc": "A simple to use system for delivering packages as a UPS Driver.",
+		"pstyle": "text-align:center;",
+		"html": "<iframe width='560' height='315' src='https://www.youtube-nocookie.com/embed/VomYn75dvxs' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+	},
+	{
+		"name": "Hitman System",
+		"url": "hitman",
+		"tags": ["hitman", "xyz", "gmod", "garrys mod"],
+		"type": "project",
+		"image": "https://milk.games/file/hitman.jpg",
+		"time": 1603478529,
+		"shortdesc": "An easy to use system for placing hits and claiming them."
+	},
+	{
 		"name": "Organization System",
 		"url": "orgsystem",
 		"tags": ["org", "xyz", "gmod", "garrys mod"],
