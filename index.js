@@ -168,7 +168,6 @@ app.get('/file/:name', fileLimiter, function(req, res) {
 
 app.post('/blog/preview', function(req, res) {
 	if (!req.session.authed) { res.sendStatus(401); return; }
-	console.log(req.body)
 	if (!req.body.body) { res.sendStatus(400); return; }
 	res.send(md.render(req.body.body));
 });
