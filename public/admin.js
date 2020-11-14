@@ -1,5 +1,3 @@
-var md = window.markdownit();
-
 function previewBlogPost() {
 	if (document.getElementById("blogPreview")) {
 		document.getElementById("blogPreview").remove()
