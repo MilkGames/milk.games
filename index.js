@@ -3,7 +3,9 @@ bodyParser = require('body-parser'),
 session  = require('express-session');
 
 const {verify} = require('hcaptcha');
-const md = require('markdown-it')();
+const md = require('markdown-it')()
+.use(require('markdown-it-highlightjs'))
+.use(require('markdown-it-imsize', {autofill: true}));
 const rateLimit = require("express-rate-limit");
 const fileLimiter = rateLimit({
   windowMs: 10 * 60 * 1000,
@@ -162,6 +164,13 @@ app.get('/file/:name', fileLimiter, function(req, res) {
 			console.log('Sent:', fileName)
 		}
 	})
+});
+
+app.post('/blog/preview', function(req, res) {
+	if (!req.session.authed) { res.sendStatus(401); return; }
+	console.log(req.body)
+	if (!req.body.body) { res.sendStatus(400); return; }
+	res.send(md.render(req.body.body));
 });
 
 app.post('/blog/post', function(req, res) {
