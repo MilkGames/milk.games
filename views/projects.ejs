@@ -34,6 +34,7 @@
     <div class="ui inverted stackable cards">
     <% for(var i=0; i < projects.length; i++) { %>
     <% if (projects[i].type == "seperator") { continue; } %>
+    <% if (filter && !projects[i].tags.includes(filter)) { continue; } %>
     <div class="card">
     <div class="content">
       <div class="header"><%= projects[i].name %></div>

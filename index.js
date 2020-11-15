@@ -59,7 +59,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/projects', function(req, res) {
-	res.render('projects');
+	res.render('projects', {filter: req.query.filter});
 });
 
 app.get('/project/:url', function(req, res) {
