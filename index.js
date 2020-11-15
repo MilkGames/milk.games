@@ -71,8 +71,8 @@ app.get('/project/:url', function(req, res) {
 
 app.get('/blog/post/:id', fileLimiter, function(req, res) {
 	db.query('SELECT * FROM blog WHERE id = ?', [req.params.id], function (error, results, fields) { 
-		if (results.length == 0) { res.sendStatus(404); return; }
-		if (results[0].password && results[0].password !== req.query.password) { res.sendStatus(404); return; }
+		if (results.length == 0) { return res.sendStatus(404); }
+		if (results[0].password && results[0].password !== req.query.password) { return res.sendStatus(404); }
 		if (error) throw error;
 		res.render('blogpost', {blog: results[0], bodyParsed: md.render(results[0].body)});
 	});
@@ -87,11 +87,11 @@ app.get('/api/projects.json', function(req, res) {
 });
 
 app.post('/feedback', submitLimiter, function(req, res) {
-	if (req.body.feedback.length < 5) { res.end("Feedback must be longer than 5 characters."); return; }
+	if (req.body.feedback.length < 5) { return res.end("Feedback must be longer than 5 characters."); }
 	if (!config.debug) {
 		verify(config.cap, req.body["h-captcha-response"])
 		.then(function(info){
-			if (info.success == false) { res.end("Invalid Captcha"); return; } 
+			if (info.success == false) { return res.end("Invalid Captcha"); } 
 			db.query('INSERT INTO feedback SET feedback = ?', [req.body.feedback], function (error, results, fields) { 
 				if (error) throw error;
 			})
@@ -148,7 +148,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage })
 
 app.post('/file/upload', upload.single('file'), function(req, res) {
-	if (!req.session.authed) { res.sendStatus(401); return; }
+	if (!req.session.authed) { return res.sendStatus(401); }
 	res.redirect('/file/' + req.file.originalname)
 });
 
@@ -167,14 +167,14 @@ app.get('/file/:name', fileLimiter, function(req, res) {
 });
 
 app.post('/blog/preview', function(req, res) {
-	if (!req.session.authed) { res.sendStatus(401); return; }
-	if (!req.body.body) { res.sendStatus(400); return; }
+	if (!req.session.authed) { return res.sendStatus(401); }
+	if (!req.body.body) { return res.sendStatus(400); }
 	res.send(md.render(req.body.body));
 });
 
 app.post('/blog/post', function(req, res) {
-	if (!req.session.authed) { res.sendStatus(401); return; }
-	if (!req.body.title || !req.body.body) { res.sendStatus(400); return; }
+	if (!req.session.authed) { return res.sendStatus(401); }
+	if (!req.body.title || !req.body.body) { return res.sendStatus(400); }
 	db.query('INSERT INTO blog SET title = ?, body = ?, img = ?, password = ?, time = UNIX_TIMESTAMP()', [req.body.title, req.body.body, req.body.img, req.body.password], function (error, results, fields) { 
 		if (error) throw error;
 		res.redirect("/blog/post/" + results.insertId + (req.body.password ? '?password='+req.body.password : ''))
