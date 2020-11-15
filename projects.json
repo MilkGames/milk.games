@@ -2,7 +2,7 @@
 	{
 		"name": "Lithiio App",
 		"url": "lithiio",
-		"tags": ["app", "android", "lithiio"],
+		"tags": ["app", "android", "lithiio", "opensource"],
 		"opensource": true,
 		"opensourceurl": "https://github.com/lithium720/Lithiio-Android",
 		"type": "project",
@@ -14,7 +14,7 @@
 	{
 		"name": "node-lithiio-upload",
 		"url": "node-lithiio-upload",
-		"tags": ["node", "js", "lithiio"],
+		"tags": ["node", "js", "lithiio", "opensource"],
 		"opensource": true,
 		"opensourceurl": "https://github.com/MilkGames/node-lithiio-upload",
 		"type": "project",
@@ -24,7 +24,7 @@
 	{
 		"name": "milk.games",
 		"url": "site",
-		"tags": ["site", "web"],
+		"tags": ["site", "web", "opensource"],
 		"opensource": true,
 		"opensourceurl": "https://github.com/MilkGames/milk.games",
 		"type": "project",
@@ -52,7 +52,7 @@
 		"url": "xwarn",
 		"opensource": true,
 		"opensourceurl": "https://github.com/MilkGames/xWarn",
-		"tags": ["xadmin", "gmod", "garrys mod"],
+		"tags": ["xadmin", "gmod", "garrys mod", "opensource"],
 		"type": "project",
 		"time": 1565200735,
 		"shortdesc": "An addon for xAdmin that allows you to warn players for breaking the rules."
