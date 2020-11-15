@@ -27,7 +27,7 @@ var db = mysql.createPool({
 db.query("CREATE TABLE IF NOT EXISTS feedback (id INTEGER AUTO_INCREMENT PRIMARY KEY, feedback TEXT)", function (err, result) {
 	if (err) throw err;
 });
-db.query("CREATE TABLE IF NOT EXISTS blog (id INTEGER AUTO_INCREMENT PRIMARY KEY, title TEXT, body TEXT, img TEXT, password TEXT, time INT)", function (err, result) {
+db.query("CREATE TABLE IF NOT EXISTS blog (id INTEGER AUTO_INCREMENT PRIMARY KEY, title TEXT, body TEXT, tags JSON, password TEXT, time INT)", function (err, result) {
 	if (err) throw err;
 });
 
