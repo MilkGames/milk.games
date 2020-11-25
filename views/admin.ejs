@@ -34,7 +34,7 @@
     <div class="ui main text container">
       <h1 class="ui inverted header">Admin Page</h1>
       <% if (authed == true) { %>
-      <form class="ui inverted form" action="/blog/post" id="blogForm" method="post">
+      <form class="ui inverted form" action="/admin/blog/post" id="blogForm" method="post">
         <div class="field">
           <label>Title:</label>
           <input type="text" name="title">
@@ -49,9 +49,9 @@
         <button class="ui button" type="button" onclick=previewBlogPost()>Preview</button>
       </form>
       <div class="ui inverted segment" id="fileUpload">
-      <form class="ui inverted form" action="/file/upload" method="post" enctype="multipart/form-data">
+      <form class="ui inverted form" action="/admin/file/upload" method="post" enctype="multipart/form-data">
         <input type="file" name="file" class="ui file input" style="width: 50%;">
-        <button class="ui primary button" style="width: 49%;" type="submit">Upload mp4</button>
+        <button class="ui primary button" style="width: 49%;" type="submit">Upload File</button>
       </form>
       </div>
       <table class="ui celled inverted table">

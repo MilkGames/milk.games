@@ -32,21 +32,21 @@
     <h1 class="ui inverted header">Portfolio</h1>
     <p>Feel free to browse! Note this page or some media may be outdated.</p>
     <div class="ui inverted stackable cards">
-    <% for(var i=0; i < projects.length; i++) { %>
-    <% if (projects[i].type == "seperator") { continue; } %>
-    <% if (filter && !projects[i].tags.includes(filter)) { continue; } %>
+    <% for (let [key, value] of Object.entries(projects)) { %>
+    <% if (value.type == "seperator") { continue; } %>
+    <% if (filter && !value.tags.includes(filter)) { continue; } %>
     <div class="card">
     <div class="content">
-      <div class="header"><%= projects[i].name %></div>
+      <div class="header"><%= value.name %></div>
       <div class="description">
-        <%= projects[i].shortdesc %>
+        <%= value.shortdesc %>
       </div>
     </div>
     <div class="extra content">
       <span class="right floated">
-        <%= new Date(projects[i].time * 1000).toUTCString() %>
+        <%= new Date(value.time * 1000).toUTCString() %>
       </span>
-      <span><% projects[i].tags.forEach(function (tag) { %>
+      <span><% value.tags.forEach(function (tag) { %>
         <% if (tag == "deprecated") { %>
           <span class="ui horizontal red label"><%= tag %></span>
         <% } else { %>
@@ -54,14 +54,14 @@
         <% } %>
         <% }) %></span>
     </div>
-    <% if (projects[i].opensource == true) { %>
-    <a href="<%= projects[i].opensourceurl %>">
+    <% if (value.opensource == true) { %>
+    <a href="<%= value.opensourceurl %>">
     <div class="ui attached button green">
       <i class="globe icon"></i>
       Visit open-source page
     </div>
     <% } %>
-    <a href="/project/<%= projects[i].url %>">
+    <a href="/project/<%= value.url %>">
     <div class="ui bottom attached button">
       <i class="globe icon"></i>
       Visit project page

@@ -3,7 +3,7 @@ function previewBlogPost() {
 		document.getElementById("blogPreview").remove()
 	}
 	var body = JSON.stringify({body: document.getElementsByName("body")[0].value});
-	fetch(`//${window.location.host}/blog/preview`, {method: "POST", headers: {"Content-Type": "application/json"}, credentials: "include", body: body})
+	fetch(`//${window.location.host}/admin/blog/preview`, {method: "POST", headers: {"Content-Type": "application/json"}, credentials: "include", body: body})
 	.then(response => response.text())
 	.then(function(body){
 		document.getElementById("blogForm").insertAdjacentHTML("afterend", `
