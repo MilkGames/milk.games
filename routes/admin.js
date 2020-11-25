@@ -43,7 +43,7 @@ module.exports = function(app, db) {
 			req.session.authed = true
 			res.redirect("/admin");
 		} else {
-			res.redirect("/")
+			res.redirect("/");
 		}
 	});
 
@@ -63,7 +63,7 @@ module.exports = function(app, db) {
 		if (!req.body.title || !req.body.body) { return res.sendStatus(400); }
 		db.query('INSERT INTO blog SET title = ?, body = ?, img = ?, password = ?, time = UNIX_TIMESTAMP()', [req.body.title, req.body.body, req.body.img, req.body.password], function (error, results, fields) { 
 			if (error) throw error;
-			res.redirect("/blog/post/" + results.insertId + (req.body.password ? '?password='+req.body.password : ''))
+			res.redirect("/blog/post/" + results.insertId + (req.body.password ? '?password='+req.body.password : ''));
 		})
 	});
 };
