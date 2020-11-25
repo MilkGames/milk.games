@@ -8,12 +8,12 @@
       <div class="ui simple inverted dropdown item">
         <a href="/projects">Projects <i class="dropdown icon"></i></a>
         <div class="menu">
-          <% for(var i=0; i < projects.length; i++) { %>
-          <% if (projects[i].type == "seperator") { %>
+          <% for (let [key, value] of Object.entries(projects)) { %>
+          <% if (value.type == "seperator") { %>
           <div class="divider"></div>
-          <div class="header"><%= projects[i].name %></div>
+          <div class="header"><%= value.name %></div>
           <% } else { %>
-          <a class="item" href="/project/<%= projects[i].url %>"><%= projects[i].name %></a>
+          <a class="item" href="/project/<%= value.url %>"><%= value.name %></a>
           <% } } %>
 
         </div>
