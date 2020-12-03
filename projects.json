@@ -19,6 +19,16 @@
 		"time": 1525811753,
 		"shortdesc": "An easy to use node module to use the Lithi.io API."
 	},
+	"rsteamhelper": {
+		"name": "rsteamhelper",
+		"tags": ["node", "js", "reddit", "snoowrap", "snoostorm"],
+		"opensource": false,
+		"repo": "https://github.com/MilkGames/rsteamhelper",
+		"type": "project",
+		"time": 1564595640,
+		"shortdesc": "A Reddit bot that helps out with moderation on r/Steam.",
+		"html": "Assists by automatically locking comments by AutoModerator, automatically highlights Valve replies and automatically archives modmails complaining about an automatically removed post pending review.<br><br><a href='https://www.reddit.com/u/rsteamhelper'>/u/rsteamhelper on Reddit</a>"
+	},
 	"site": {
 		"name": "milk.games",
 		"tags": ["site", "web", "opensource"],
