@@ -1,7 +1,6 @@
 {
 	"lithiio": {
 		"name": "Lithiio App",
-		"url": "lithiio",
 		"tags": ["app", "android", "lithiio", "opensource"],
 		"opensource": true,
 		"opensourceurl": "https://github.com/lithium720/Lithiio-Android",
@@ -13,7 +12,6 @@
 	},
 	"node-lithiio-upload": {
 		"name": "node-lithiio-upload",
-		"url": "node-lithiio-upload",
 		"tags": ["node", "js", "lithiio", "opensource"],
 		"opensource": true,
 		"opensourceurl": "https://github.com/MilkGames/node-lithiio-upload",
@@ -23,7 +21,6 @@
 	},
 	"site": {
 		"name": "milk.games",
-		"url": "site",
 		"tags": ["site", "web", "opensource"],
 		"opensource": true,
 		"opensourceurl": "https://github.com/MilkGames/milk.games",
@@ -34,7 +31,6 @@
 	},
 	"jimbot": {
 		"name": "Jimbot",
-		"url": "jimbot",
 		"tags": ["discord", "discord.js", "bot"],
 		"type": "project",
 		"image": "https://milk.games/file/jimbotinaction.png",
@@ -44,12 +40,10 @@
 	},
 	"gmod": {
 		"name": "Garry's Mod",
-		"url": null,
 		"type": "seperator"
 	},
 	"xwarn": {
 		"name": "xWarn",
-		"url": "xwarn",
 		"opensource": true,
 		"opensourceurl": "https://github.com/MilkGames/xWarn",
 		"tags": ["xadmin", "gmod", "garrys mod", "opensource"],
@@ -59,7 +53,6 @@
 	},
 	"policeexam": {
 		"name": "Police Exam",
-		"url": "policeexam",
 		"tags": ["police", "xyz", "gmod", "garrys mod"],
 		"type": "project",
 		"image": "https://milk.games/file/policeexam.png",
@@ -68,7 +61,6 @@
 	},
 	"undercover": {
 		"name": "Undercover System",
-		"url": "undercover",
 		"tags": ["undercover", "xyz", "gmod", "garrys mod"],
 		"type": "project",
 		"image": "https://milk.games/file/ucsystem.png",
@@ -77,7 +69,6 @@
 	},
 	"metaldetector": {
 		"name": "Metal Detector",
-		"url": "metaldetector",
 		"tags": ["prison", "xyz", "gmod", "garrys mod"],
 		"type": "project",
 		"image": "https://milk.games/file/metaldetector.png",
@@ -88,7 +79,6 @@
 	},
 	"pnc": {
 		"name": "PNC System",
-		"url": "pnc",
 		"tags": ["pnc", "xyz", "gmod", "garrys mod"],
 		"type": "project",
 		"image": "https://cdn.discordapp.com/attachments/438296243265863680/665635434826694686/unknown.png",
@@ -97,7 +87,6 @@
 	},
 	"ticketbook": {
 		"name": "TicketBook",
-		"url": "ticketbook",
 		"tags": ["ticketbook", "xyz", "gmod", "garrys mod"],
 		"type": "project",
 		"image": "https://cdn.discordapp.com/attachments/438296243265863680/666079387812102212/unknown.png",
@@ -106,7 +95,6 @@
 	},
 	"weaponchecker": {
 		"name": "Weapon Checker",
-		"url": "weaponchecker",
 		"tags": ["police", "xyz", "gmod", "garrys mod"],
 		"type": "project",
 		"image": "https://cdn.discordapp.com/attachments/438296243265863680/694288075609604156/unknown.png",
@@ -115,7 +103,6 @@
 	},
 	"ups": {
 		"name": "UPS System",
-		"url": "ups",
 		"tags": ["ups", "xyz", "gmod", "garrys mod"],
 		"type": "project",
 		"image": "https://milk.games/file/ups.png",
@@ -126,7 +113,6 @@
 	},
 	"hitman": {
 		"name": "Hitman System",
-		"url": "hitman",
 		"tags": ["hitman", "xyz", "gmod", "garrys mod"],
 		"type": "project",
 		"image": "https://milk.games/file/hitman.jpg",
@@ -135,7 +121,6 @@
 	},
 	"orgsystem": {
 		"name": "Organization System",
-		"url": "orgsystem",
 		"tags": ["org", "xyz", "gmod", "garrys mod"],
 		"type": "project",
 		"image": "https://milk.games/file/orgsystem.jpg",
