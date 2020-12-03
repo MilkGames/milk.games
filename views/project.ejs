@@ -48,7 +48,7 @@
       <% }) %></span>
     <p><%= project.shortdesc %></p>
     <% if (project.opensource == true) { %>
-    <p><a href="<%= project.opensourceurl %>">Visit open-source page</a></p>
+    <p><a href="<%= project.repo %>">Visit open-source page</a></p>
     <% } %>
     <img class="imgproject" src="<%= project.image %>">
     <p style="<%- project.pstyle || "" %>"><%- project.html %></p>
