@@ -50,6 +50,7 @@
 	},
 	"gmod": {
 		"name": "Garry's Mod",
+		"url": null,
 		"type": "seperator"
 	},
 	"xwarn": {
