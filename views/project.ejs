@@ -50,7 +50,9 @@
     <% if (project.opensource == true) { %>
     <p><a href="<%= project.repo %>">Visit open-source page</a></p>
     <% } %>
+    <% if (project.image !== undefined) { %>
     <img class="imgproject" src="<%= project.image %>">
+    <% } %>
     <p style="<%- project.pstyle || "" %>"><%- project.html %></p>
   </div>
 </div>
