@@ -6,6 +6,9 @@ module.exports = {
         'database': ''
     }, 
     'session': {
-    	'secret': 'secret'
-    }
+    	'key': '',
+    	'secret': ''
+    },
+    'cap': '',
+    'debug': true
 };
