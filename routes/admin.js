@@ -61,7 +61,8 @@ module.exports = function(app, db) {
 	app.post('/admin/blog/post', function(req, res) {
 		if (!req.session.authed) { return res.sendStatus(401); }
 		if (!req.body.title || !req.body.body) { return res.sendStatus(400); }
-		db.query('INSERT INTO blog SET title = ?, body = ?, img = ?, password = ?, time = UNIX_TIMESTAMP()', [req.body.title, req.body.body, req.body.img, req.body.password], function (error, results, fields) { 
+
+		db.query('INSERT INTO blog SET title = ?, body = ?, tags = JSON_ARRAY(?), password = ?, time = UNIX_TIMESTAMP()', [req.body.title, req.body.body, req.body.tag, req.body.password], function (error, results, fields) { 
 			if (error) throw error;
 			res.redirect("/blog/post/" + results.insertId + (req.body.password ? '?password='+req.body.password : ''));
 		})

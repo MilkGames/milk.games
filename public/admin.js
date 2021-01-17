@@ -19,3 +19,10 @@ function previewBlogPost() {
 		console.log(err);
 	})
 }
+
+function addTag() {
+	var tags = document.getElementsByClassName("tag");
+	tags[tags.length-1].insertAdjacentHTML("afterend", `
+		<input type="text" class="tag" name="tags[${tags.length+1}]">
+		`);
+}
