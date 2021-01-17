@@ -21,7 +21,6 @@
   <meta name="twitter:title" content="MilkGames">
   <meta name="twitter:description" content="The official website for all things related to MilkGames and his amazing projects. *cough cough*">
   <meta name="mobile-web-app-capable" content="yes">
-  <script src="//hcaptcha.com/1/api.js" async defer></script>
   <%- include("partials/required.ejs") %>
 </head>
 <body>
@@ -37,12 +36,20 @@
         <label>Type some useful feedback here:</label>
         <textarea name="feedback"></textarea>
       </div>
-      <div class="h-captcha" data-sitekey="b17054fd-d22c-471c-a163-da1f23186c27"></div>
+      <%- captcha %>
       <br>
       <button class="ui primary button" type="submit">Submit</button>
     </form>
   </div>
-
+<script>
+function cb(token){
+    console.log('token', token);
+    var input = document.createElement('input');
+    input.setAttribute('type', 'text');
+    input.setAttribute('name', 'g-recaptcha-response');
+    input.setAttribute('value', token);
+    document.getElementsByTagName('form')[0].appendChild(input);
+}</script>
 </div>
 </body>
 </html>
