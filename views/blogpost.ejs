@@ -38,7 +38,7 @@
       <div class="ui raised segment inverted">
 
       <div class="ui huge inverted header"><%= blog.title %>
-        <div class="sub header timestamp" style="color: rgba(255,255,255,.7);" datetime="<%= blog.time * 1000 %>"></div>
+        <div class="sub header timestamp" style="color: rgba(255,255,255,.7);" title="<%= new Date(blog.time * 1000).toISOString() %>" datetime="<%= blog.time * 1000 %>"></div>
       </div>
       <% JSON.parse(blog.tags).forEach(function(tag) { %>
           <span class="ui horizontal label"><%= tag %></span>
