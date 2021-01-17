@@ -11,6 +11,14 @@ const app = express();
 
 app.locals.config = require('./config/config');
 app.locals.projects = require('./projects.json');
+app.locals.tags = []; // Array with all tags
+for (let [key, value] of Object.entries(app.locals.projects)){
+  if (value.type == "seperator") { continue; }
+  value.tags.forEach(function(tag){
+    if (app.locals.tags.includes(tag)){ return; }
+    app.locals.tags.push(tag);
+  });
+};
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
