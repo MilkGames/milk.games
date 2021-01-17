@@ -48,8 +48,8 @@
 		"shortdesc": "A Discord bot made in NodeJS which is sort of maintained.",
 		"html": "Jimbot in action"
 	},
-	"gmod": {
-		"name": "Garry's Mod",
+	"xyz": {
+		"name": "The XYZ Community",
 		"url": null,
 		"type": "seperator"
 	},
@@ -102,7 +102,7 @@
 		"type": "project",
 		"image": "https://cdn.discordapp.com/attachments/438296243265863680/666079387812102212/unknown.png",
 		"time": 1582711026,
-		"shortdesc": "A remade ticketbook using XYZ UI"
+		"shortdesc": "A remade ticketbook using XYZ UI."
 	},
 	"weaponchecker": {
 		"name": "Weapon Checker",
@@ -137,5 +137,13 @@
 		"image": "https://milk.games/file/orgsystem.jpg",
 		"time": 1601564721,
 		"shortdesc": "An organization system with permissions, roles, an inventory and various other features."
+	},
+	"xAPI": {
+		"name": "API",
+		"tags": ["api", "xyz", "gmod", "garrys mod"],
+		"type": "project",
+		"image": "https://milk.games/file/xapi.png",
+		"time": 1609395064,
+		"shortdesc": "An API for The XYZ Network with multi-server support."
 	}
 }
